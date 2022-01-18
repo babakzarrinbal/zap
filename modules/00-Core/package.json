@@ -7,5 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "babak.zarrinbal",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "sql.js": "^1.6.2",
+    "handlebars": "^4.7.7",
+    "lodash": "^4.17.21",
+    "pino": "^6.11.3",
+    "sqlite3": "^5.0.2"
+  },
+  "engines": {
+    "node": ">= 12.*",
+    "npm": ">= 6.*"
+  }
 }
