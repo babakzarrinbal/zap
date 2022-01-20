@@ -24,7 +24,7 @@ const queryEndpointType = require('../db/query-endpoint-type.js')
 const queryEndpoint = require('../db/query-endpoint.js')
 const queryConfig = require('../db/query-config.js')
 const validation = require('../validation/validation.js')
-const restApi = require('../../src-shared/rest-api.js')
+const restApi = require('../src-shared/rest-api.js')
 const { StatusCodes } = require('http-status-codes')
 
 /**

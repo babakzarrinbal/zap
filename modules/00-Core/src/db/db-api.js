@@ -25,7 +25,7 @@ const sqlite = require('sqlite3') // TODO replace with sql.js when on browser en
 const fsp = require('fs').promises
 const env = require('../util/env') // TODO logger functionality for all envs...
 const util = require('../util/util.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const dbCache = require('./db-cache')
 
 // This is a SQLITE specific thing. With SQLITE databases,
