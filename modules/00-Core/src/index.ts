@@ -1,3 +1,1 @@
-import *  as apis from "./API"
-
-export default apis;
+export * as db  from "./db/db-api.js";

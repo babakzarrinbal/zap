@@ -2,7 +2,8 @@
   "name": "@zzapp/core",
   "version": "1.0.1",
   "description": "core component",
-  "main": "index.js",
+  "main": "dist/index.ts",
+  "browser": "dist/browser.ts",
   "scripts": {
     "build": "rollup -c",
     "lint": "eslint --fix 'src/**/*.ts'",
