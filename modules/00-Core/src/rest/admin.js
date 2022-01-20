@@ -16,7 +16,7 @@
  */
 
 const dbApi = require('../db/db-api.js')
-const restApi = require('../../src-shared/rest-api.js')
+const restApi = require('../src-shared/rest-api.js')
 const env = require('../util/env')
 const { StatusCodes } = require('http-status-codes')
 

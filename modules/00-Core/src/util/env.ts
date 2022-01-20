@@ -320,7 +320,7 @@ export function logWarning(msg: string, err = null) {
  * @param {*} msg
  * @param {*} err
  */
-export function logSql(msg: string, query: string | null, args: string | null) {
+export function logSql(msg: string, query: string | null, args: string | null ) {
   if (query == null) {
     log('sql', msg)
   } else {
