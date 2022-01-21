@@ -15,7 +15,7 @@
  *    limitations under the License.
  */
 
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const templateUtil = require('./template-util.js')
 const util = require('../util/util.js')
 

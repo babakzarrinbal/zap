@@ -1,0 +1,8 @@
+{
+  "ignore": [".git", "./node_modules/", "./dist/"],
+  "watch": ["./src/**/*","./test/**/*"],
+  "execMap": {
+    "ts": "cross-env ts-node -r tsconfig-paths/register"
+},
+  "ext": "ts,js,json"
+}

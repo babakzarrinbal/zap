@@ -23,10 +23,10 @@
 const dbApi = require('./db-api.js')
 const dbMapping = require('./db-mapping.js')
 const queryPackage = require('./query-package.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const queryZcl = require('./query-zcl.js')
 const queryCommand = require('./query-command.js')
-const restApi = require('../../src-shared/rest-api.js')
+const restApi = require('../src-shared/rest-api.js')
 const _ = require('lodash')
 
 /**

@@ -21,14 +21,14 @@
  * @module External IDE interface.
  */
 
-const restApi = require('../../src-shared/rest-api.js')
+const restApi = require('../src-shared/rest-api.js')
 const env = require('../util/env')
 const importJs = require('../importexport/import.js')
 const exportJs = require('../importexport/export.js')
 const path = require('path')
 const { StatusCodes } = require('http-status-codes')
 const querySession = require('../db/query-session.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const studio = require('../ide-integration/studio-rest-api')
 
 /**

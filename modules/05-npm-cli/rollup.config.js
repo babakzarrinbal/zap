@@ -1,7 +1,6 @@
 import { terser } from "rollup-plugin-terser";
 import pluginTypescript from "@rollup/plugin-typescript";
 import pluginCommonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
 import pluginNodeResolve from "@rollup/plugin-node-resolve";
 import { babel } from "@rollup/plugin-babel";
 import * as path from "path";
@@ -42,11 +41,8 @@ export default [
     plugins: [
       pluginTypescript(),
       pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
+        extensions: [".js", ".ts"],
       }),
-      json(),
       babel({
         babelHelpers: "bundled",
         configFile: path.resolve(__dirname, ".babelrc.js"),
@@ -75,13 +71,9 @@ export default [
     ],
     plugins: [
       pluginTypescript(),
-      
       pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
+        extensions: [".js", ".ts"],
       }),
-      json(),
       babel({
         babelHelpers: "bundled",
         configFile: path.resolve(__dirname, ".babelrc.js"),
@@ -101,7 +93,7 @@ export default [
         format: "cjs",
         sourcemap: "inline",
         banner,
-        exports: "named",
+        exports: "default",
       },
     ],
     external: [
@@ -111,11 +103,8 @@ export default [
     plugins: [
       pluginTypescript(),
       pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
+        extensions: [".js", ".ts"],
       }),
-      json(),
       babel({
         babelHelpers: "bundled",
         configFile: path.resolve(__dirname, ".babelrc.js"),
