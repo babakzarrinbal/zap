@@ -24,7 +24,7 @@
  */
 const dbApi = require('./db-api.js')
 const dbMapping = require('./db-mapping.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 
 /**
  * Returns the cluster available to this session by the code.

@@ -22,7 +22,7 @@ const queryEndpointType = require('../db/query-endpoint-type.js')
 const bin = require('../util/bin')
 const types = require('../util/types.js')
 const zclUtil = require('../util/zcl-util.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 /**
  * Returns number of endpoint types.
  *

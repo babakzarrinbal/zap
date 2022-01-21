@@ -33,7 +33,7 @@ const asyncValidation = require('../validation/async-validation.js')
 const validation = require('../validation/validation.js')
 const restApi = require('../src-shared/rest-api.js')
 const zclLoader = require('../zcl/zcl-loader.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../.src-shared/db-enum.js')
 const { StatusCodes } = require('http-status-codes')
 
 /**

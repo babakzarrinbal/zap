@@ -29,7 +29,7 @@ const queryAttribute = require('../db/query-attribute.js')
 const queryConfig = require('../db/query-config.js')
 const querySession = require('../db/query-session.js')
 const helperZcl = require('./helper-zcl.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const iteratorUtil = require('../util/iterator-util.js')
 
 /**

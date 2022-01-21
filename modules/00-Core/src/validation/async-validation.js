@@ -27,7 +27,7 @@ import * as SessionTimersTypes from '../types/session-timers-types'
 const queryPackage = require('../db/query-package.js')
 const sessionTimers = require('../main-process/session-timers.js')
 const wsServer = require('../server/ws-server.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 
 let ASYNC_ENFORCE_COMMON_CLUSTER_SPEC_INTERVAL_MS = 3000
 

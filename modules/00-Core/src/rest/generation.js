@@ -23,8 +23,8 @@
 
 const generationEngine = require('../generator/generation-engine.js')
 const queryPackage = require('../db/query-package.js')
-const restApi = require('../../src-shared/rest-api.js')
-const dbEnum = require('../../src-shared/db-enum.js')
+const restApi = require('../src-shared/rest-api.js')
+const dbEnum = require('../src-shared/db-enum.js')
 const { StatusCodes } = require('http-status-codes')
 
 /**

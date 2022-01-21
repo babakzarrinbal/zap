@@ -8,12 +8,7 @@
 
 'use strict';
 
-const initiated = true;
-
-var apis = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	initiated: initiated
-});
-
-module.exports = apis;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgudHMiLCJzb3VyY2VzIjpbIi4uL3NyYy9BUEkvaW5kZXgudHMiXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IGNvbnN0IGluaXRpYXRlZCAgPSB0cnVlO1xyXG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7OztBQUFPLE1BQU0sU0FBUyxHQUFJLElBQUk7Ozs7Ozs7OzsifQ==
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+tslib_1.__exportStar(require("./API"), exports);
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXgudHMiLCJzb3VyY2VzIjpbIi4uL3NyYy9pbmRleC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgKiAgZnJvbSBcIi4vQVBJXCI7XHJcbiJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFBQTs7In0=

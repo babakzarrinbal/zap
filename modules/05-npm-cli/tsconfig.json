@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ESNEXT",
-    "module": "commonjs",
-    "strict": true,
-    "esModuleInterop": true,
-    "allowJs": true,
-    "checkJs": false,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "baseUrl": "./",
-    "paths": {
-      "@/*":["./*"],
-      "@src/*": ["src/*"],
-      "@test/*": ["test/*"]
-    },"lib": [
-      "es5", "es6", "dom", "dom.iterable","es2016"
-  ]
-
+      "target": "esnext",
+      "module": "esnext",
+      "strict": true,
+      "esModuleInterop": true,
+      "allowJs": true,
+      "checkJs": false,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "include": [
+        "./**/*"
+    ],
+    "exclude": [
+        "./dist/**/*"
+    ]
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
 
     /* Projects */
@@ -114,7 +111,5 @@
     /* Completeness */
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     // "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
-  },
-  "include": ["./**/*"],
-  "exclude": ["./dist/**/*"]
+  }
 }

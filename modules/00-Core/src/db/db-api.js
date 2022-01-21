@@ -21,9 +21,9 @@
  * @module JS API: low level database access
  */
 
-const sqlite = require('sqlite3') // TODO replace with sql.js when on browser env 
+const sqlite = require('sqlite3') // TODO add  sql.js for browser env
 const fsp = require('fs').promises
-const env = require('../util/env') // TODO logger functionality for all envs...
+const env = require('../util/env') // TODO logger functionality for all envs ...
 const util = require('../util/util.js')
 const dbEnum = require('../src-shared/db-enum.js')
 const dbCache = require('./db-cache')

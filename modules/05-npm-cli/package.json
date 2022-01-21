@@ -1,7 +1,7 @@
 {
-  "name": "@zzapp/core",
-  "version": "1.0.1",
-  "description": "core component",
+  "name": "@zzapp/cli",
+  "version": "1.0.0",
+  "description": "cli tool for zap",
   "main": "dist/index.ts",
   "browser": "dist/browser.ts",
   "scripts": {
@@ -13,11 +13,7 @@
   "email": "babak.zarrinbal@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "handlebars": "^4.7.7",
-    "lodash": "^4.17.21",
-    "pino": "^6.11.3",
-    "sql.js": "^1.6.2",
-    "sqlite3": "^5.0.2"
+    "@zzapp/core": "file:../00-Core"
   },
   "engines": {
     "node": ">= 12.*",
@@ -26,24 +22,35 @@
   "devDependencies": {
     "@babel/core": "^7.16.10",
     "@babel/preset-env": "^7.16.11",
-    "@ef-carbon/tspm": "^2.2.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^21.0.1",
-    "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^13.1.3",
     "@rollup/plugin-typescript": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^5.10.0",
     "@typescript-eslint/parser": "^5.10.0",
-    "cross-env": "^7.0.3",
     "eslint": "^8.7.0",
     "jest": "^27.4.7",
-    "nodemon": "^2.0.15",
     "rollup": "^2.64.0",
     "rollup-plugin-terser": "^7.0.2",
     "ts-jest": "^27.1.3",
-    "ts-node": "^10.4.0",
     "tsc": "^2.0.4",
-    "tsconfig-paths": "^3.12.0",
     "tslib": "^2.3.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsconfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/test/**/*.test.ts"
+    ]
   }
 }

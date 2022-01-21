@@ -22,7 +22,7 @@ const bin = require('../util/bin')
 const types = require('../util/types.js')
 const string = require('../util/string')
 const _ = require('lodash')
-const dbEnum = require('../../src-shared/db-enum.js')
+const dbEnum = require('../src-shared/db-enum.js')
 
 /**
  * This module contains the API for templating. For more detailed instructions, read {@tutorial template-tutorial}
