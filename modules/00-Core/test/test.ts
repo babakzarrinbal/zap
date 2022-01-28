@@ -1,11 +1,8 @@
-import  {DB,endPoint} from "@src/index";
-import path from "path";
-console.log();
+import  {endPoint} from "@src/index";
 (async function() {
-
-  const database = await DB.initDatabase(path.resolve('./test/.mockdata/testdb.sqlite'))
+  const e = await endPoint.getOne("./sqlite.sqlite",1)
+  console.log('test',e)
   // console.log(await endPoint.create(database))
-  console.log(await endPoint.getOne(database,1))
   // const newId = await queryEndpoint.insertEndpoint(
   //   database,1,1,1,1,1,1,1
   // )

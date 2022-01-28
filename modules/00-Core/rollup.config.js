@@ -1,128 +1,75 @@
-import { terser } from "rollup-plugin-terser";
-import pluginTypescript from "@rollup/plugin-typescript";
-import pluginCommonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
-import pluginNodeResolve from "@rollup/plugin-node-resolve";
-import { babel } from "@rollup/plugin-babel";
-import * as path from "path";
-import pkg from "./package.json";
+// import merge from 'deepmerge'
+import { createBasicConfig } from '@open-wc/building-rollup'
+import pluginTypescript from '@rollup/plugin-typescript'
+import pluginCommonjs from '@rollup/plugin-commonjs'
+import pkg from './package.json'
+import { babel } from '@rollup/plugin-babel'
 
-const moduleName = pkg.name.replace(/^@.*\//, "");
-const inputFileName = "src/index.ts";
-const author = pkg.author;
+import path from 'path'
+import alias from '@rollup/plugin-alias'
+import resolve from '@rollup/plugin-node-resolve'
+
+const customResolver = resolve({
+  extensions: ['.mjs', '.js', '.jsx', '.json', '.sass', '.scss'],
+})
+const projectRootDir = path.resolve(__dirname)
+
+const moduleName = pkg.name.replace(/^@.*\//, '')
+const input = 'src/index.ts'
 const banner = `
   /**
    * @license
-   * author: ${author}
+   * author: ${pkg.author}
    * ${moduleName}.js v${pkg.version}
    * Released under the ${pkg.license} license.
    */
-`;
+`
 
-export default [
-  {
-    input: inputFileName,
-    output: [
-      {
-        name: moduleName,
-        file: pkg.browser,
-        format: "iife",
-        sourcemap: "inline",
-        banner,
-      },
-      {
-        name: moduleName,
-        file: pkg.browser.replace(".js", ".min.js"),
-        format: "iife",
-        sourcemap: "inline",
-        banner,
-        plugins: [terser()],
-      },
-    ],
-    plugins: [
-      pluginTypescript(),
-      pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
-      }),
-      json(),
-      babel({
-        babelHelpers: "bundled",
-        configFile: path.resolve(__dirname, ".babelrc.js"),
-      }),
-      pluginNodeResolve({
-        browser: true,
-      }),
-    ],
-  },
+const baseConfig = createBasicConfig()
 
-  // ES
-  {
-    input: inputFileName,
-    output: [
-      {
-        file: pkg.module,
-        format: "es",
-        sourcemap: "inline",
-        banner,
-        exports: "named",
-      },
-    ],
-    external: [
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.devDependencies || {}),
-    ],
-    plugins: [
-      pluginTypescript(),
-      
-      pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
-      }),
-      json(),
-      babel({
-        babelHelpers: "bundled",
-        configFile: path.resolve(__dirname, ".babelrc.js"),
-      }),
-      pluginNodeResolve({
-        browser: false,
-      }),
-    ],
+export default {
+  input,
+  output: {
+    dir: 'dist',
+    name: moduleName,
+    banner,
   },
+  plugins: [
+    alias({
+      entries: [
+        {
+          find: '@/',
+          RemotePlayback: projectRootDir + '/',
+        },
+        {
+          find: '@src',
+          replacement: path.resolve(projectRootDir, './src'),
+          // OR place `customResolver` here. See explanation below.
+        },
+      ],
+      customResolver,
+    }),
+    resolve(
+      {extensions: [ '.mjs', '.js', '.jsx', '.json','.ts' ],}
+    ),
+    pluginTypescript({
+      sourceMap:false
+    }),
+    pluginCommonjs({
+      extensions: ['.js', '.ts'],
+    }),
+    babel({
+      babelHelpers: 'bundled',
+      configFile: path.resolve(__dirname, '.babelrc.js'),
+    }),
+  ],
+}
 
-  // CommonJS
-  {
-    input: inputFileName,
-    output: [
-      {
-        file: pkg.main,
-        format: "cjs",
-        sourcemap: "inline",
-        banner,
-        exports: "named",
-      },
-    ],
-    external: [
-      ...Object.keys(pkg.dependencies || {}),
-      ...Object.keys(pkg.devDependencies || {}),
-    ],
-    plugins: [
-      pluginTypescript(),
-      pluginCommonjs({
-        extensions: [".js", ".ts",".json"],
-        include: ['node_modules/**'],
-        transformMixedEsModules:true
-      }),
-      json(),
-      babel({
-        babelHelpers: "bundled",
-        configFile: path.resolve(__dirname, ".babelrc.js"),
-      }),
-      pluginNodeResolve({
-        browser: false,
-      }),
-    ],
-  },
-];
+// const baseConfig = createBasicConfig();
+
+// export default merge(baseConfig, {
+//   input: './dist/index.js',
+//   output: {
+//       dir: 'dist',
+//   }
+// });
