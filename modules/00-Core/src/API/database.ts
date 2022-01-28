@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import * as db from '@src/db/db-api'
+const  db = require('@src/db/db-api')
 
 /**
  *
@@ -17,7 +17,7 @@ export async function initDatabase(dbpath: string) {
     fs.writeFileSync(dbpath, '')
     return await db.initDatabaseAndLoadSchema(
       dbpath,
-      path.join(__dirname, '../db/zap-schema.sql'),
+      path.join(__dirname, '../../src/db/zap-schema.sql'),
       {}
     )
   }else{

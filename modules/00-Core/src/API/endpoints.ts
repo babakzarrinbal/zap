@@ -1,6 +1,6 @@
-import queryEndpoint from '@src/db/query-endpoint.js';
+const  queryEndpoint = require('@src/db/query-endpoint.js');
 const validation = require('@src/validation/validation.js')
-
+const {initDatabase} = require("./database");
 interface endpoint {
   id?: number
   sessionId?: number
@@ -17,7 +17,8 @@ interface endpoint {
  * @param {object} db instance of database
  * @param {endpoint} endpointinfo  instance of endpoint type
  */
-export async function create(db: object, endpointinfo: endpoint={}) {
+export async function create(dbpath: string, endpointinfo: endpoint={}) {
+  const db = await initDatabase(dbpath);
   const newId = await queryEndpoint.insertEndpoint(
     db,
     endpointinfo.sessionId,
@@ -46,6 +47,7 @@ export async function create(db: object, endpointinfo: endpoint={}) {
  * @param {object} db instance of database
  * @param {number} endpointId id of endpoint in database
  */
-export async function getOne(db: object,endpointId:number){
+export async function getOne(dbpath: string,endpointId:number){
+  const db = await initDatabase(dbpath);
  return await queryEndpoint.selectEndpoint(db,endpointId)
 }
