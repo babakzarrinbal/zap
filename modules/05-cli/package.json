@@ -16,14 +16,15 @@
       "node16-win-x64",
       "node16-linux-x64"
     ],
+    "output":"zap",
     "outputPath": "pkg"
   },
   "scripts": {
     "start": "npx ts-node -r tsconfig-paths/register ./src/cli.ts",
     "build": "npx rimraf dist &&npx tsc &&npx tscpaths -p tsconfig.json -s ./src -o ./dist",
-    "pkg-win": "pkg . --targets node16-win-x64",
-    "pkg-macos": "pkg . --targets node16-macos-x64",
-    "pkg-linux": "pkg . --targets node16-linux-x64",
+    "pkg-win": "pkg . --targets node16-win-x64 -o=pkg/zap",
+    "pkg-macos": "pkg . --targets node16-macos-x64 -o=pkg/zap",
+    "pkg-linux": "pkg . --targets node16-linux-x64 -o=pkg/zap",
     "lint": "eslint --fix 'src/**/*.ts'",
     "test": "jest"
   },
