@@ -19,9 +19,6 @@
     }
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.json",
-    "src/**/*.sql"
+    "src/**/*"
   ]
 }

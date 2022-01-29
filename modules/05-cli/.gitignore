@@ -1,6 +1,6 @@
 pkg
 dist
-
+**/*.sqlite
 # generated-html
 
 # # Temp generation file

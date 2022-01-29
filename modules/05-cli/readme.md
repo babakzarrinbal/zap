@@ -1,10 +1,7 @@
-### core module for zap project
+### cli module for zap project
 
-includes template providing and generator functionality 
+uses [@zzapp/core package in sibiling folder] functionality through command line
 
-can be installed in js projects with 
+can be used as npm cli 
+creating os related package with pkg ( see package.json scripts )
 
-```
-npm i @zzapp/core
-
-```
