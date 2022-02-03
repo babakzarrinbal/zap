@@ -16,6 +16,8 @@ interface endpoint {
  *
  * @param {object} db instance of database
  * @param {endpoint} endpointinfo  instance of endpoint type
+ * @returns {endpoint} endpoint create in database
+ * 
  */
 export async function create(dbpath: string, endpointinfo: endpoint={}) {
   const db = await initDatabase(dbpath);
@@ -51,3 +53,4 @@ export async function getOne(dbpath: string,endpointId:number){
   const db = await initDatabase(dbpath);
  return await queryEndpoint.selectEndpoint(db,endpointId)
 }
+
