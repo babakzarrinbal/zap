@@ -37,13 +37,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOne = exports.create = void 0;
-var queryEndpoint = require('../db/query-endpoint.js');
-var validation = require('../validation/validation.js');
+var queryEndpoint = require('zap/dist/src-electron/db/query-endpoint.js');
+var validation = require('zap/dist/src-electron//validation/validation.js');
 var initDatabase = require("./database").initDatabase;
 /**
  *
  * @param {object} db instance of database
  * @param {endpoint} endpointinfo  instance of endpoint type
+ * @returns {endpoint} endpoint create in database
+ *
  */
 function create(dbpath, endpointinfo) {
     if (endpointinfo === void 0) { endpointinfo = {}; }

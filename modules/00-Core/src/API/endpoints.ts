@@ -1,5 +1,5 @@
-const  queryEndpoint = require('@src/db/query-endpoint.js');
-const validation = require('@src/validation/validation.js')
+const  queryEndpoint = require('zap/dist/src-electron/db/query-endpoint.js');
+const validation = require('zap/dist/src-electron//validation/validation.js')
 const {initDatabase} = require("./database");
 interface endpoint {
   id?: number

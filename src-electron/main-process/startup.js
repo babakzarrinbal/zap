@@ -74,7 +74,7 @@ async function startNormal(
   mainDatabase = db
 
   return zclLoader
-    .loadZcl(db, argv.zclProperties)
+    .loadZcl(db, argv.zclProperties ||{})
     .then((ctx) =>
       generatorEngine.loadTemplates(ctx.db, argv.generationTemplate)
     )

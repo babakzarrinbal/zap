@@ -14,14 +14,13 @@
     "baseUrl": "./",
     "paths": {
       "@/*": ["./*"],
-      "@src/*": ["src/*"],
+      "@overrides/*": ["src/overrides/*"],
       "@test/*": ["test/*"]
     }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.js",
-    "src/**/*.json",
-    "test/**/*.ts"
+    "src/**/*.json"
   ]
 }

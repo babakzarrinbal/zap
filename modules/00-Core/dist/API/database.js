@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.initDatabase = void 0;
 var fs_1 = __importDefault(require("fs"));
 var path_1 = __importDefault(require("path"));
-var db = require('../db/db-api');
+var db = require('zap/dist/src-electron/db/db-api');
 /**
  *
  * @param {string} dbpath path of sqlite file

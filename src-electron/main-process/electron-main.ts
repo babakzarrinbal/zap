@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 /**
  *
  *    Copyright (c) 2020 Silicon Labs

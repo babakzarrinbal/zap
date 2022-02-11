@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-const  db = require('@src/db/db-api')
+const  db = require('zap/dist/src-electron/db/db-api')
 
 /**
  *

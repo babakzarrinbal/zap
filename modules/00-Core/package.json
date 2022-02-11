@@ -5,8 +5,10 @@
   "main": "dist/index.js",
   "browser": "dist/browser.js",
   "scripts": {
+    "prebuild":"npx cpy **/*.sql ../dist/src-electron/ --cwd=../../src-electron/ --no-overwrite --parents ",
     "start": "npx ts-node -r tsconfig-paths/register ",
-    "build": "npx del-cli dist &&npx tsc &&npx tscpaths -p tsconfig.json -s ./src -o ./dist && npx cpy **/*.sql ../dist/ --cwd=src/ --no-overwrite --parents",
+    "build2": "npx del-cli dist &&npx tsc &&npx tscpaths -p tsconfig.json -s ./src -o ./dist && npx cpy **/*.sql ../dist/ --cwd=src/ --no-overwrite --parents",
+    "build": "npx del-cli dist &&npx tsc &&npx tscpaths -p tsconfig.json -s ./src -o ./dist ",
     "build-rollup": "npx del-cli dist &&npx rollup -c",
     "lint": "eslint --fix 'src/**/*.ts'",
     "test": "jest"
@@ -19,7 +21,8 @@
     "lodash": "^4.17.21",
     "pino": "^6.11.3",
     "sql.js": "^1.6.2",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "zap": "file:../.."
   },
   "engines": {
     "node": ">= 12.*",

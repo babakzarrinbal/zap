@@ -9,4 +9,7 @@
 //   // console.log(await queryEndpoint.selectEndpoint(database,newId))
 // })()
 
-console.log(require('os').homedir())
+// console.log(require('os').homedir())
+import { object } from "underscore";
+import  * as test  from  "../src/API"
+console.log(Object.keys(test.startUp));

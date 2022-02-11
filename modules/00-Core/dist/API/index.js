@@ -19,8 +19,12 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DB = exports.endPoint = exports.initiated = void 0;
+exports.LegecyEnv = exports.LegecyStartUp = exports.DB = exports.endPoint = exports.initiated = void 0;
 exports.initiated = true;
 exports.endPoint = __importStar(require("./endpoints"));
 exports.DB = __importStar(require("./database"));
+var legecyZap_1 = require("./legecyZap");
+Object.defineProperty(exports, "LegecyStartUp", { enumerable: true, get: function () { return legecyZap_1.startUp; } });
+var legecyZap_2 = require("./legecyZap");
+Object.defineProperty(exports, "LegecyEnv", { enumerable: true, get: function () { return legecyZap_2.env; } });
 //# sourceMappingURL=index.js.map

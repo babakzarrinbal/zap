@@ -1,3 +1,5 @@
+// overrides dist/src-electron/main-process/startup.js
+
 "use strict";
 /**
  *
@@ -574,6 +576,7 @@ function quit() {
  * @param {*} isElectron
  */
 async function startUpMainInstance(isElectron, argv) {
+    isElectron = false;
     if (isElectron) {
         exports.quit = () => {
             // app.quit();
@@ -660,6 +663,6 @@ exports.generateSingleFile = generateSingleFile;
 
 
 
-env.setDevelopmentEnv()
-// add db schema sql file to src-electron/db folder
-startNormal({})
+// env.setDevelopmentEnv()
+// // add db schema sql file to src-electron/db folder
+// startNormal({})
